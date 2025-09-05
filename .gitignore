@@ -1,0 +1,20 @@
+node_modules
+# Keep environment variables out of version control
+.env
+
+/src/generated/prisma
+
+# Ignore log files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerc
+
+
+# Ignore build output
+dist
+build
+out 
