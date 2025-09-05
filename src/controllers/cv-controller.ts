@@ -6,8 +6,7 @@ const prisma = new PrismaClient();
 
 export async function uploadCVController(req: Request, res: Response) {
   try {
-    console.log('req.body:', req.body);
-    console.log('req.file:', req.file);
+
     const file = req.file as Express.Multer.File | undefined;
     const { userId } = req.body;
 
@@ -20,6 +19,7 @@ export async function uploadCVController(req: Request, res: Response) {
     }
 
     const publicUrl = await uploadCV(file, userId);
+    console.log('Uploaded CV URL:', publicUrl);
 
     await prisma.user.update({
       where: { id: userId },
